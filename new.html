@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at 20% 20%, #1a1f3a, #070b18);
+  color:#fff;
+  display:flex;
+}
+
+.sidebar{
+  width:300px;
+  background:#0b0f1f;
+  padding:30px 20px;
+  height:100vh;
+  border-right:1px solid rgba(255,255,255,0.05);
+}
+
+.profile img{
+  width:110px;
+  border-radius:50%;
+  border:3px solid #7c3aed;
+  margin-bottom:15px;
+}
+
+.profile h2{
+  color:#a78bfa;
+  font-weight:600;
+}
+
+.profile p{
+  color:#aaa;
+  font-size:14px;
+}
+
+.menu{margin-top:30px}
+.menu button{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border-radius:12px;
+  border:1px solid transparent;
+  background:#0f1428;
+  color:#bbb;
+  cursor:pointer;
+  transition:.3s;
+}
+.menu button.active{
+  border:1px solid #7c3aed;
+  color:#a78bfa;
+  box-shadow:0 0 15px rgba(124,58,237,.3);
+}
+
+.main{
+  flex:1;
+  padding:50px;
+}
+
+.badge{
+  display:inline-block;
+  background:#1a1f3a;
+  color:#a78bfa;
+  padding:6px 14px;
+  border-radius:20px;
+  margin-bottom:15px;
+  font-size:12px;
+}
+
+.title{
+  font-size:48px;
+  font-weight:700;
+  background:linear-gradient(90deg,#fff,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+  color:#aaa;
+  margin-top:10px;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.card{
+  background:linear-gradient(145deg,#0f1428,#0b0f1f);
+  border:1px solid rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:18px;
+  position:relative;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#7c3aed;
+  box-shadow:0 0 25px rgba(124,58,237,.25);
+}
+
+.card h3{
+  margin-top:10px;
+  margin-bottom:12px;
+}
+
+.card ul{
+  padding-left:18px;
+  color:#bbb;
+  line-height:1.6;
+}
+
+.tag{
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:12px;
+  padding:5px 12px;
+  border-radius:20px;
+  background:#1a1f3a;
+  color:#a78bfa;
+}
+
+.icon{
+  width:50px;
+  height:50px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#7c3aed,#9333ea);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="profile">
+    <img src="/mnt/data/WhatsApp Image 2026-04-12 at 19.41.37.jpeg">
+    <h2>Mohammed Ismail</h2>
+    <p>Flutter Developer</p>
+  </div>
+
+  <div class="menu">
+    <button>About</button>
+    <button class="active">Skills</button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="badge">&lt;/&gt; MY EXPERTISE</div>
+  <div class="title">Skills</div>
+  <div class="subtitle">Technologies and tools I use to build modern mobile applications.</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="tag">Core</div>
+      <div class="icon">F</div>
+      <h3>Flutter Development</h3>
+      <ul>
+        <li>Flutter Framework & Widgets</li>
+        <li>Dart Programming Language</li>
+        <li>Cross-Platform (Android & iOS)</li>
+        <li>Clean Architecture & Best Practices</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="tag">Design</div>
+      <div class="icon">🎨</div>
+      <h3>UI/UX Design</h3>
+      <ul>
+        <li>Material Design 3</li>
+        <li>Cupertino (iOS) Design</li>
+        <li>Responsive & Adaptive Layouts</li>
+        <li>Custom UI Components & Animations</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="tag">State</div>
+      <div class="icon">⬢</div>
+      <h3>State Management</h3>
+      <ul>
+        <li>Provider</li>
+        <li>Riverpod</li>
+        <li>GetX (Basic)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="tag">Backend</div>
+      <div class="icon">🔥</div>
+      <h3>Backend Integration</h3>
+      <ul>
+        <li>REST API Integration (HTTP & JSON)</li>
+        <li>Firebase Authentication</li>
+        <li>Cloud Firestore & Realtime Database</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="tag">Database</div>
+      <div class="icon">💾</div>
+      <h3>Local Storage & Database</h3>
+      <ul>
+        <li>SharedPreferences</li>
+        <li>SQLite Database</li>
+        <li>Data Handling & Persistence</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="tag">Tools</div>
+      <div class="icon">🛠</div>
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li>Git & GitHub</li>
+        <li>VS Code & Android Studio</li>
+        <li>Postman (API Testing)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
