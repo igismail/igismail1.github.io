@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ultra Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -16,7 +17,6 @@ body{
   display:flex;
 }
 
-/* SIDEBAR */
 .sidebar{
   width:310px;
   height:100vh;
@@ -24,10 +24,9 @@ body{
   background:rgba(10,15,30,0.65);
   backdrop-filter:blur(25px);
   border-right:1px solid rgba(255,255,255,0.06);
-}
-
-.profile{
-  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
 .profile img{
@@ -36,25 +35,13 @@ body{
   object-fit:cover;
   border-radius:50%;
   border:3px solid #7c3aed;
-  box-shadow:
-    0 0 20px rgba(124,58,237,.6),
-    0 0 60px rgba(124,58,237,.4);
   margin-bottom:15px;
 }
 
-.profile h2{
-  font-size:20px;
-  font-weight:600;
-}
+.profile h2{font-size:20px;font-weight:600}
+.profile p{font-size:13px;color:#9ca3af}
 
-.profile p{
-  font-size:13px;
-  color:#9ca3af;
-}
-
-.menu{
-  margin-top:45px;
-}
+.menu{margin-top:45px}
 
 .menu button{
   width:100%;
@@ -66,117 +53,92 @@ body{
   margin-bottom:12px;
   cursor:pointer;
   transition:.3s;
-}
-
-.menu button:hover{
-  background:rgba(124,58,237,0.08);
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .menu button.active{
   background:rgba(124,58,237,0.18);
   border:1px solid #7c3aed;
   color:#c4b5fd;
-  box-shadow:0 0 25px rgba(124,58,237,.6);
 }
 
-/* MAIN */
-.main{
-  flex:1;
-  padding:70px;
+.contact{
+  font-size:13px;
+  color:#9ca3af;
+  line-height:1.8;
 }
 
-.badge{
-  display:inline-block;
-  padding:7px 16px;
-  border-radius:999px;
-  font-size:12px;
-  background:rgba(124,58,237,0.1);
-  border:1px solid rgba(124,58,237,0.35);
-  color:#c4b5fd;
-  margin-bottom:18px;
-}
+.contact i{margin-right:8px}
+
+.main{flex:1;padding:70px}
+
+.section{display:none}
+.section.active{display:block}
 
 .title{
   font-size:52px;
   font-weight:700;
-  background:linear-gradient(90deg,#ffffff,#c4b5fd,#7c3aed);
+  background:linear-gradient(90deg,#fff,#c4b5fd,#7c3aed);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-.subtitle{
-  margin-top:12px;
-  margin-bottom:45px;
-  color:#9ca3af;
-}
+.subtitle{margin:10px 0 40px;color:#9ca3af}
 
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:28px;
+  gap:30px;
 }
 
-/* CARD */
 .card{
   position:relative;
-  padding:28px;
-  border-radius:22px;
-  background:rgba(15,20,40,0.55);
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(124,58,237,0.25);
+  padding:30px;
+  border-radius:25px;
+  background:linear-gradient(145deg, rgba(30,40,80,0.4), rgba(5,10,30,0.9));
+  border:1px solid rgba(124,58,237,0.3);
   transition:.35s;
   overflow:hidden;
 }
 
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at top left, rgba(124,58,237,.25), transparent 60%);
-  opacity:.6;
-}
-
 .card:hover{
-  transform:translateY(-10px) scale(1.01);
-  box-shadow:0 0 50px rgba(124,58,237,.5);
+  transform:translateY(-8px);
+  box-shadow:0 0 40px rgba(124,58,237,.5);
 }
 
 .tag{
   position:absolute;
-  top:20px;
-  right:20px;
+  top:18px;
+  right:18px;
   font-size:11px;
-  padding:6px 12px;
+  padding:5px 12px;
   border-radius:999px;
-  background:rgba(124,58,237,0.18);
-  border:1px solid rgba(124,58,237,0.4);
+  background:rgba(124,58,237,0.2);
+  border:1px solid rgba(124,58,237,0.5);
   color:#c4b5fd;
 }
 
-.icon{
-  width:52px;
-  height:52px;
-  border-radius:14px;
+.icon-box{
+  width:60px;
+  height:60px;
+  border-radius:18px;
   background:linear-gradient(135deg,#7c3aed,#9333ea);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight:600;
-  margin-bottom:18px;
-  box-shadow:
-    0 0 20px rgba(124,58,237,.7),
-    inset 0 0 10px rgba(255,255,255,0.1);
+  font-size:22px;
+  margin-bottom:20px;
+  box-shadow:0 0 25px rgba(124,58,237,.6);
 }
 
-.card h3{
-  margin-bottom:12px;
-  font-size:18px;
-}
+.card h3{margin-bottom:12px}
 
 .card ul{
   padding-left:18px;
   color:#cbd5e1;
-  line-height:1.7;
+  line-height:1.8;
 }
 
 </style>
@@ -185,95 +147,126 @@ body{
 <body>
 
 <div class="sidebar">
-  <div class="profile">
-    <img src=/"profile.jpg/">
-    <h2>Mohammed Ismail</h2>
-    <p>Flutter Developer</p>
+  <div>
+    <div class="profile">
+      <img src="profile.jpg" alt="profile">
+      <h2>Mohammed Ismail</h2>
+      <p>Flutter Developer</p>
+    </div>
+
+    <div class="menu">
+      <button class="active" onclick="showSection('about', this)"><i class="fa fa-user"></i> About</button>
+      <button onclick="showSection('skills', this)"><i class="fa fa-code"></i> Skills</button>
+    </div>
   </div>
 
-  <div class="menu">
-    <button>About</button>
-    <button class="active">Skills</button>
+  <div class="contact">
+    <strong>Contact</strong><br>
+    <i class="fa fa-envelope"></i> mohammed@email.com<br>
+    <i class="fa fa-phone"></i> +1234567890<br>
+    <i class="fa-brands fa-github"></i> github.com/mohammed
   </div>
 </div>
 
 <div class="main">
-  <div class="badge">&lt;/&gt; MY EXPERTISE</div>
-  <div class="title">Skills</div>
-  <div class="subtitle">Technologies and tools I use to build modern mobile applications.</div>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="tag">Core</div>
-      <div class="icon">F</div>
-      <h3>Flutter Development</h3>
-      <ul>
-        <li>Flutter Framework & Widgets</li>
-        <li>Dart Programming Language</li>
-        <li>Cross-Platform (Android & iOS)</li>
-        <li>Clean Architecture</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="tag">Design</div>
-      <div class="icon">UI</div>
-      <h3>UI/UX Design</h3>
-      <ul>
-        <li>Material Design</li>
-        <li>Cupertino Design</li>
-        <li>Responsive Layouts</li>
-        <li>Animations</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="tag">State</div>
-      <div class="icon">SM</div>
-      <h3>State Management</h3>
-      <ul>
-        <li>Provider</li>
-        <li>Riverpod</li>
-        <li>GetX</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="tag">Backend</div>
-      <div class="icon">API</div>
-      <h3>Backend Integration</h3>
-      <ul>
-        <li>REST APIs</li>
-        <li>Firebase Auth</li>
-        <li>Firestore</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="tag">Database</div>
-      <div class="icon">DB</div>
-      <h3>Local Storage</h3>
-      <ul>
-        <li>SharedPreferences</li>
-        <li>SQLite</li>
-        <li>Persistence</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="tag">Tools</div>
-      <div class="icon">DEV</div>
-      <h3>Tools & Platforms</h3>
-      <ul>
-        <li>Git & GitHub</li>
-        <li>VS Code</li>
-        <li>Postman</li>
-      </ul>
-    </div>
-
+  <div id="about" class="section active">
+    <div class="title">About Me</div>
+    <div class="subtitle">Who I am</div>
+    <p>
+      I am a passionate Flutter Developer who builds modern, fast, and responsive mobile applications.
+      I focus on clean architecture, UI/UX, and scalable solutions.
+    </p>
   </div>
+
+  <div id="skills" class="section">
+    <div class="title">Skills</div>
+    <div class="subtitle">Technologies and tools I use to build modern mobile applications.</div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="tag">Core</div>
+        <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
+        <h3>Flutter Development</h3>
+        <ul>
+          <li>Flutter Framework & Widgets</li>
+          <li>Dart Programming Language</li>
+          <li>Cross-Platform (Android & iOS)</li>
+          <li>Clean Architecture</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tag">Design</div>
+        <div class="icon-box"><i class="fa fa-palette"></i></div>
+        <h3>UI/UX Design</h3>
+        <ul>
+          <li>Material Design</li>
+          <li>Cupertino Design</li>
+          <li>Responsive Layouts</li>
+          <li>Animations</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tag">State</div>
+        <div class="icon-box"><i class="fa fa-layer-group"></i></div>
+        <h3>State Management</h3>
+        <ul>
+          <li>Provider</li>
+          <li>Riverpod</li>
+          <li>GetX</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tag">Backend</div>
+        <div class="icon-box"><i class="fa fa-server"></i></div>
+        <h3>Backend Integration</h3>
+        <ul>
+          <li>REST APIs</li>
+          <li>Firebase Auth</li>
+          <li>Firestore</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tag">Database</div>
+        <div class="icon-box"><i class="fa fa-database"></i></div>
+        <h3>Local Storage</h3>
+        <ul>
+          <li>SharedPreferences</li>
+          <li>SQLite</li>
+          <li>Persistence</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tag">Tools</div>
+        <div class="icon-box"><i class="fa fa-code"></i></div>
+        <h3>Tools & Platforms</h3>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+          <li>Postman</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
 </div>
+
+<script>
+function showSection(id, el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+</script>
 
 </body>
 </html>
